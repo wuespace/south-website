@@ -36,7 +36,7 @@ bun2nix.writeBunApplication {
 
   bunInstallFlags = [
     "--cpu=*"
-  ]
+  ];
 
   buildPhase = ''
     bun run build
