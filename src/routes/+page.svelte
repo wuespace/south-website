@@ -52,7 +52,7 @@
   
   <p>
     The system contains two redundant sensor boards each containing two IMUs,
-    a magnetometer, a barometer and a connection to one of two <i>DLR Phoenix</i> GPS receivers.
+    a magnetometer, a barometer and a connection to the <i>DLR Phoenix</i> GPS receiver.
     Each sensor board also contains a MCU for pose estimation.
   </p>
   
@@ -70,7 +70,7 @@
   <h3>Power supply</h3>
   
   <p>
-    The power supply connects to two 4s2p LiIon batteries (main and backup) and
+    The power supply connects to two 5s LiIon batteries (main and backup) and
     distributes the power to all different systems using isolated power rails.
     The power supply board constantly monitors current, voltage, and temperature
     of the two batteries and is able to quickly switch to the backup if
@@ -98,12 +98,17 @@
     As part of the <i>RocketHD</i> project we aim to point a 5.8GHz dish antenna
     with 0.5 degrees of precision.
   </p>
+  
+  <a href="/documents/south-documentation.pdf">Read the documentation to learn more</a>
+  <br>
+  <br>
+  <br>
 </div>
 
 <style>
 
   .title-div {
-    width: 50%;
+    width: min(50rem, 90%);
     height: 100%;
     margin: auto;
     text-align: center;
@@ -111,7 +116,7 @@
   }
 
   .content-div {
-    width: 50%;
+    width: min(50rem, 90%);
     height: 100%;
     margin: auto;
     justify-content: center;
@@ -131,7 +136,6 @@
     background-size: 0% 1px;
     background-repeat: no-repeat;
     transition: background-size 0.25s ease;
-    margin-left: auto;
   }
   
   a:hover, a:focus-visible {
