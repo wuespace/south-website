@@ -3,6 +3,7 @@
   import DesktopNavBar from "./desktop_nav_bar.svelte";
   import MobileNavBar from "./mobile_nav_bar.svelte";
   import SubpageLinks from "./subpage_links.svelte";
+  import Footer from "./footer.svelte";
   
   const wide = new MediaQuery('min-aspect-ratio: 1/1');
   
@@ -21,8 +22,9 @@
 
 {@render children()}
 
-<style>
+<Footer />
 
+<style>
   :global(html),
   :global(body) {
     background-image: linear-gradient(to bottom right, #292929, #0D2D59);

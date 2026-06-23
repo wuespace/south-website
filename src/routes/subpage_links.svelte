@@ -6,6 +6,7 @@
 <style>
   a {
     color: white;
+    font-size: 120%;
     text-decoration: none;
     background-image: linear-gradient(currentColor, currentColor);
     background-position: 0 100%;

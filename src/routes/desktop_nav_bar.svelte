@@ -5,7 +5,7 @@
 
 <nav>
   <a class="horizontal-flex" href="/">
-    <img src={logo} style:width=4rem alt="logo">
+    <img src={logo} style:width=6rem alt="south logo">
     <h1>S²OUTH</h1>
   </a>
   <div class="horizontal-flex links">

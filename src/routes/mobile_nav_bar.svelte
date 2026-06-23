@@ -7,7 +7,7 @@
 
 <nav>
   <a class="horizontal-flex" href="/">
-    <img src={logo} style:width=4rem alt="logo">
+    <img src={logo} style:width=4rem alt="south logo">
     <h1>S²OUTH</h1>
   </a>
   <button class="menu-btn" aria-label="navigation-menu" type="button" onclick={() => {menu_active = !menu_active; console.log("blub");}}>

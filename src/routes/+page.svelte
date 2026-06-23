@@ -99,8 +99,12 @@
     with 0.5 degrees of precision.
   </p>
   
-  <a href="/documents/south-documentation.pdf">Read the documentation to learn more</a>
   <br>
+  <div style:text-align="center">
+    <a href="/documents/south-documentation.pdf">
+      Read the documentation to learn more
+    </a>
+  </div>
   <br>
   <br>
 </div>
