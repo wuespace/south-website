@@ -46,14 +46,9 @@
 
         packages.default = package;
 
-        # Exposed so CI can `nix run .#skopeo` to push the image using the
-        # flake's locked nixpkgs, avoiding the unauthenticated `nixpkgs#`
-        # registry lookup (which hits the GitHub API rate limit on CI).
-        packages.skopeo = pkgs.skopeo;
-
-        # OCI image for the home server. Build with `nix build .#container`,
+        # OCI image for the server. Build with `nix build .#container`,
         # then `docker load < result` (or push to a registry). The bun server
-        # listens on $PORT (default 3000); point Traefik at that port.
+        # listens on $PORT (default 3000);
         packages.container = pkgs.dockerTools.buildLayeredImage {
           name = "south-website";
           tag = "latest";
