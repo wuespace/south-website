@@ -1,14 +1,17 @@
-<script lang="ts">
-  import { load_images } from "$lib/utils.svelte";
-  const images = load_images("pictures/south_cube");
-</script>
+<svelte:head>
+  <title>South Cube — S²OUTH</title>
+  <meta
+    name="description"
+    content="South Cube, a preliminary S²OUTH telemetry payload, flew on the ASTG Ispida rocket at EUROC 2025, reaching 9.4 km apogee and validating key systems in real-world conditions."
+  />
+</svelte:head>
 
 <div class="title-div">
   <h1 class="title">South Cube</h1>
 </div>
 
 <div class="content-div">
-  <img loading="lazy" src={images.CubeBP} style:filter="invert(1)" class="image" alt="cube">
+  <enhanced:img loading="lazy" src="$lib/assets/pictures/south_cube/CubeBP.png" style:filter="invert(1)" class="image" alt="cube" />
   <p>
     South Cube was a preliminary version of the <i>S²OUTH</i> telemetry system that
     flew as a payload on the <a href="https://astg.at/projects/ispida">ASTG Ispida</a>
@@ -17,7 +20,7 @@
     more than 8g. The system successfully transmitted and recorded telemetry data
     and proved the functionality of several key systems in real world conditions
   </p>
-  <img loading="lazy" src={images.Cube} class="image" alt="cube">
+  <enhanced:img loading="lazy" src="$lib/assets/pictures/south_cube/Cube.jpg" class="image" alt="cube" />
 </div>
 
 <style>
@@ -43,6 +46,7 @@
     object-fit: cover;
     width: 100%;
     aspect-ratio: 1/1;
+    height: auto;
   }
 
   a {

@@ -34,6 +34,11 @@
             typescript-language-server
             svelte-language-server
           ];
+
+          # sharp (via @sveltejs/enhanced-img) loads a prebuilt native module
+          # that needs libstdc++.so.6 on the library path; without this
+          # `bun run dev/build/check` fails to load sharp on NixOS.
+          LD_LIBRARY_PATH = lib.makeLibraryPath [ pkgs.stdenv.cc.cc.lib ];
         };
 
         packages.default = package;

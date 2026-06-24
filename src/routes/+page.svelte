@@ -1,10 +1,13 @@
-<script lang="ts">
-  import { load_images } from "$lib/utils.svelte";
-  const images = load_images("pictures/home");
-</script>
+<svelte:head>
+  <title>S²OUTH — Student's Sub-Orbital Unified Telemetry Handler</title>
+  <meta
+    name="description"
+    content="S²OUTH is a modern, reliable telemetry system delivering live sensor data, high-precision pose estimation, and an HD video downlink for the full duration of a suborbital spaceshot flight."
+  />
+</svelte:head>
 
 <div class="title-div">
-  <div class="bg-title-div" style:background-image="url({images.AssemblyCAD})"></div>
+  <enhanced:img class="bg-title-div" src="$lib/assets/pictures/home/AssemblyCAD.png" alt="" fetchpriority="high" />
   <div class="text-title-div">
     <h1 class="title">S²OUTH</h1>
     
@@ -37,7 +40,7 @@
     More details can be found on the <a href="/north">N₂ORTH</a> page.
   </p>
 
-  <img loading="lazy" src={images.FullAssembly} class="image" alt="integrated assembly">
+  <enhanced:img loading="lazy" src="$lib/assets/pictures/home/FullAssembly.jpg" class="image" alt="integrated assembly" />
   
   <br>
   <h2>Capabilities</h2>
@@ -63,7 +66,7 @@
     Each sensor board also contains a MCU for pose estimation.
   </p>
 
-  <img loading="lazy" src={images.UpperSensor} class="image" alt="Upper sensor boards">
+  <enhanced:img loading="lazy" src="$lib/assets/pictures/home/UpperSensor.jpg" class="image" alt="Upper sensor boards" />
   
   <br>
   <h3>Telemetry downlink</h3>
@@ -73,7 +76,7 @@
     guarantees a stable connection throughout the entire flight.
   </p>
   
-  <img loading="lazy" src={images.RocketLST} class="image" alt="RocketLST">
+  <enhanced:img loading="lazy" src="$lib/assets/pictures/home/RocketLST.png" class="image" alt="RocketLST" />
   
   <br>
   <h3>Power supply</h3>
@@ -86,7 +89,7 @@
     measurements exceed specifications.
   </p>
   
-  <img loading="lazy" src={images.EPS} class="image" alt="EPS">
+  <enhanced:img loading="lazy" src="$lib/assets/pictures/home/EPS.png" class="image" alt="EPS" />
   
   <br>
   <h3>RocketHD</h3>
@@ -99,7 +102,7 @@
     live from space.
   </p>
   
-  <img loading="lazy" src={images.RocketHD} class="image" alt="RocketHD">
+  <enhanced:img loading="lazy" src="$lib/assets/pictures/home/RocketHD.png" class="image" alt="RocketHD" />
   
   <br>
   <h3>Groundstation</h3>
@@ -121,18 +124,23 @@
 <style>
 
   .title-div {
+    position: relative;
     display: grid;
     width: 100%;
     height: 25rem;
     margin: auto;
+    overflow: hidden;
   }
   .bg-title-div {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     filter: contrast(0.5) brightness(0.9);
-    background-size: cover;
-    background-position: center;
-    
+
     z-index: 0;
-    grid-area: 1/1;
   }
   .text-title-div {
     width: min(50rem, 90%);
@@ -160,6 +168,7 @@
     object-fit: cover;
     aspect-ratio: 1/1;
     width: 100%;
+    height: auto;
   }
 
   a {

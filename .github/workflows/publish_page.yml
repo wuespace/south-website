@@ -31,13 +31,15 @@ jobs:
         with:
           extra-conf: |
             experimental-features = nix-command flakes
+            # bun2nix isn't on cache.nixos.org; pull the prebuilt binary from
+            # the nix-community cache instead of compiling it from source.
+            extra-substituters = https://nix-community.cachix.org
+            extra-trusted-public-keys = nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
 
       - name: Build image
         shell: bash
         run: nix build .#container --print-build-logs
 
-      # Official action; writes credentials to ~/.docker/config.json, which
-      # skopeo also reads — so no manual login dance.
       - name: Log in to GHCR
         uses: docker/login-action@v3
         with:
@@ -52,6 +54,11 @@ jobs:
       - name: Push image
         shell: bash
         run: |
+          # The runner ships a v1 /etc/containers/registries.conf that the
+          # Nix-provided skopeo refuses to parse; point it at an empty file,
+          # which is a valid (default) v2 config.
+          export CONTAINERS_REGISTRIES_CONF="$RUNNER_TEMP/registries.conf"
+          : > "$CONTAINERS_REGISTRIES_CONF"
           IMAGE="ghcr.io/${GITHUB_REPOSITORY,,}"
           nix run nixpkgs#skopeo -- copy --insecure-policy \
             docker-archive:result "docker://${IMAGE}:latest"

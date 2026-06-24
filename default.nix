@@ -19,6 +19,12 @@ bun2nix.writeBunApplication {
 
   src = ./.;
 
+  # `sharp` (pulled in by @sveltejs/enhanced-img to optimize images at build
+  # time) ships a prebuilt native module that dlopen()s libstdc++.so.6, which
+  # isn't on the default library path under Nix. Expose it so `bun run build`
+  # can load sharp. Build-time only — the runtime server never touches sharp.
+  LD_LIBRARY_PATH = lib.makeLibraryPath [ stdenv.cc.cc.lib ];
+
   buildPhase = ''
     bun run build
   '';

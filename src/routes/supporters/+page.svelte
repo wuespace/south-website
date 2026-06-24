@@ -1,7 +1,10 @@
-<script lang="ts">
-  import { load_images } from "$lib/utils.svelte";
-  const logos = load_images("supporters");
-</script>
+<svelte:head>
+  <title>Supporters — S²OUTH</title>
+  <meta
+    name="description"
+    content="The organizations whose support makes the S²OUTH telemetry project possible."
+  />
+</svelte:head>
 
 <div class="title-div">
   <h1 class="title">Supporters</h1>
@@ -12,8 +15,8 @@
     This project is only possible due to support from these organizations:
   </h2>
   <div class="logo-grid">
-    <img src={logos.aisler_logo} class="logo" alt="aisler logo">
-    <img src={logos.sparkasse_logo} class="logo" alt="sparkasse logo">
+    <enhanced:img src="$lib/assets/supporters/aisler_logo.png" class="logo" alt="aisler logo" />
+    <enhanced:img src="$lib/assets/supporters/sparkasse_logo.png" class="logo" alt="sparkasse logo" />
   </div>
 </div>
 
@@ -43,6 +46,7 @@
   }
   .logo {
     width: 100%;
+    height: auto;
   }
   .title {
     font-size: 400%;

@@ -1,0 +1,17 @@
+# This is an exemplary compose file for a traefik setup
+services:
+  website:
+    image: ghcr.io/s2outh/website:latest
+    restart: unless-stopped
+    networks:
+      - traefik-network
+    labels:
+      traefik.enable: true
+      traefik.http.routers.south.rule: Host(`south.chemtrail.rs`)
+      traefik.http.routers.south.entrypoints: websecure
+      traefik.http.routers.south.tls.certresolver: letsencrypt
+      traefik.http.services.south.loadbalancer.server.port: 3000
+
+networks:
+  traefik-network:
+    external: true

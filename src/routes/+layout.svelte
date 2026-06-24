@@ -37,7 +37,7 @@
   }
   @font-face {
     font-family: 'Roboto';
-    src: url('/fonts/Roboto-Regular.woff2') format('truetype');
+    src: url('/fonts/Roboto-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -45,7 +45,7 @@
 
   @font-face {
     font-family: 'Roboto';
-    src: url('/fonts/Roboto-ExtraBold.woff2') format('truetype');
+    src: url('/fonts/Roboto-ExtraBold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -53,7 +53,7 @@
 
   @font-face {
     font-family: 'Roboto';
-    src: url('/fonts/Roboto-Italic.woff2') format('truetype');
+    src: url('/fonts/Roboto-Italic.woff2') format('woff2');
     font-weight: 400;
     font-style: italic;
     font-display: swap;
@@ -61,7 +61,7 @@
 
   @font-face {
     font-family: 'Roboto';
-    src: url('/fonts/Roboto-ExtraBoldItalic.woff2') format('truetype');
+    src: url('/fonts/Roboto-ExtraBoldItalic.woff2') format('woff2');
     font-weight: 700;
     font-style: italic;
     font-display: swap;
@@ -69,7 +69,7 @@
 
   @font-face {
     font-family: 'Chakra Petch';
-    src: url('/fonts/ChakraPetch-SemiBold.woff2') format('truetype');
+    src: url('/fonts/ChakraPetch-SemiBold.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
     font-display: swap;

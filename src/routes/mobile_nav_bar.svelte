@@ -10,7 +10,14 @@
     <img src={logo} style:width=4rem style:margin=0.2rem alt="south logo">
     <h1>S²OUTH</h1>
   </a>
-  <button class="menu-btn" aria-label="navigation-menu" type="button" onclick={() => {menu_active = !menu_active; console.log("blub");}}>
+  <button
+    class="menu-btn"
+    aria-label="navigation-menu"
+    aria-expanded={menu_active}
+    type="button"
+    onclick={() => {
+      menu_active = !menu_active;
+    }}>
     <svg width="3rem" height="3rem" viewBox="0 0 100 100">
       <rect class="btn btn-top" class:active={menu_active} x="5" y="0" />
       <rect class="btn btn-mid" class:active={menu_active} x="5" y="40" />

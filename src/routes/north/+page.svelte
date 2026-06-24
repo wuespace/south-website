@@ -1,14 +1,17 @@
-<script lang="ts">
-  import { load_images } from "$lib/utils.svelte";
-  const images = load_images("pictures/north");
-</script>
+<svelte:head>
+  <title>N₂ORTH — S²OUTH</title>
+  <meta
+    name="description"
+    content="N₂ORTH is a student-built hybrid rocket by HyEnD Stuttgart, aiming for up to 150 km apogee and carrying the S²OUTH telemetry system."
+  />
+</svelte:head>
 
 <div class="title-div">
   <h1 class="title">N₂ORTH</h1>
 </div>
 
 <div class="content-div">
-  <img loading="lazy" src={images.North} class="image" alt="north rocket">
+  <enhanced:img loading="lazy" src="$lib/assets/pictures/north/North.png" class="image" alt="north rocket" />
   <p>
     <i>N₂ORTH</i> is a student build hybrid engine rocket developed by the team of
     <i>HyEnD</i> e. V. in Stuttgart. It’s main engine, <i>HyLIGHT</i> provides up to
@@ -44,6 +47,7 @@
   }
   .image {
     width: 100%;
+    height: auto;
   }
 
   a {
