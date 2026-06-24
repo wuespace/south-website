@@ -36,19 +36,13 @@
 <style>
 
   h1 {
-    font-size: 140%;
+    font-size: 200%;
   }
   nav {
     height: 4%;
     padding: 0 1rem;
     display: flex;
     align-items: center;
-  }
-  .horizontal-flex {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.5rem;
   }
   .vertical-flex {
     display: flex;
@@ -64,7 +58,7 @@
     margin-left: auto;
   }
   .btn {
-    fill: white;
+    fill: var(--color-icon);
     transform: rotate(0deg);
     transform-origin: left;
     transform-box: fill-box;
@@ -91,17 +85,5 @@
   .btn-btm.active {
     transform: rotate(-45deg);
     width: 114%;
-  }
-  a {
-    color: white;
-    text-decoration: none;
-    background-image: linear-gradient(currentColor, currentColor);
-    background-position: 0 100%;
-    background-size: 0 0.1rem;
-    background-repeat: no-repeat;
-    transition: background-size 0.25s ease;
-  }
-  a:hover, a:focus-visible {
-    background-size: 100% 0.1rem;
   }
 </style>

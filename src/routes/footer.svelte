@@ -26,7 +26,11 @@
   hr {
     border: none;
     height: 3px;
-    background: white;
+    background: var(--color-rule);
+  }
+  /* Footer links wrap images, so opt out of the global underline animation. */
+  a {
+    background-image: none;
   }
   .container {
     width: min(30rem, 90%);

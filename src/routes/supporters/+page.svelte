@@ -22,6 +22,7 @@
 
 <style>
 
+  /* .content-div base and .title are defined in src/app.css */
   .title-div {
     width: min(50rem, 90%);
     height: 100%;
@@ -31,13 +32,10 @@
   }
   .content-div {
     width: min(70rem, 90%);
-    height: 100%;
-    margin: auto;
-    justify-content: center;
     text-align: center;
   }
   .logo-grid {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--color-surface);
     border-radius: 1rem;
     padding: 2rem;
     display: grid;
@@ -47,8 +45,5 @@
   .logo {
     width: 100%;
     height: auto;
-  }
-  .title {
-    font-size: 300%;
   }
 </style>

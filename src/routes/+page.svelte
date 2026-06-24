@@ -7,7 +7,7 @@
 </svelte:head>
 
 <div class="title-div">
-  <enhanced:img class="bg-title-div" src="$lib/assets/pictures/home/AssemblyCAD.png" alt="" fetchpriority="high" />
+  <enhanced:img class="bg-title" src="$lib/assets/pictures/home/AssemblyCAD.png" alt="" fetchpriority="high" />
   <div class="text-title-div">
     <h1 class="title">S²OUTH</h1>
     
@@ -124,10 +124,11 @@
     margin: auto;
     overflow: hidden;
   }
-  .bg-title-div {
+  .bg-title {
     position: absolute;
     inset: 0;
-    width: 100%;
+    margin-inline: auto;
+    width: min(110rem, 100%);
     height: 100%;
     object-fit: cover;
     object-position: center;
@@ -145,14 +146,11 @@
     grid-area: 1/1;
   }
 
+  /* .content-div base (width/height/margin/justify + accent links) is in app.css */
   .content-div {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
-    justify-content: center;
-    width: min(50rem, 90%);
-    height: 100%;
-    margin: auto;
   }
   .title {
     font-size: 440%;
@@ -160,23 +158,9 @@
   .subtitle {
     font-size: 200%;
   }
+  /* .image base (width/height) is in app.css */
   .image {
     object-fit: cover;
     aspect-ratio: 1/1;
-    width: 100%;
-    height: auto;
-  }
-
-  a {
-    color: lightblue;
-    text-decoration: none;
-    background-image: linear-gradient(currentColor, currentColor);
-    background-position: 0 100%;
-    background-size: 0% 0.1rem;
-    background-repeat: no-repeat;
-    transition: background-size 0.25s ease;
-  }
-  a:hover, a:focus-visible {
-    background-size: 100% 0.1rem;
   }
 </style>

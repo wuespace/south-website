@@ -5,17 +5,8 @@
 <a href="/north">N₂ORTH</a>
 
 <style>
+  /* Link colour + underline animation come from src/app.css. */
   a {
-    color: white;
-    font-size: 120%;
-    text-decoration: none;
-    background-image: linear-gradient(currentColor, currentColor);
-    background-position: 0 100%;
-    background-size: 0 0.1rem;
-    background-repeat: no-repeat;
-    transition: background-size 0.25s ease;
-  }
-  a:hover, a:focus-visible {
-    background-size: 100% 0.1rem;
+    font-size: 140%;
   }
 </style>

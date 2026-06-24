@@ -1,0 +1,149 @@
+/* ============================================================
+   Design tokens
+   All colours are defined as variables here so a light theme can
+   later be added by overriding these on :root (e.g. via a
+   [data-theme="light"] selector or prefers-color-scheme).
+   ============================================================ */
+:root {
+  /* Backgrounds */
+  --color-bg-start: #292929;
+  --color-bg-end: #0d2d59;
+  --color-bg-fallback: #0d2d59;
+  --gradient-bg: linear-gradient(
+    to bottom right,
+    var(--color-bg-start),
+    var(--color-bg-end)
+  );
+
+  /* Text */
+  --color-text: #ffffff;
+  --color-heading: #ffffff;
+  --color-icon: #ffffff;
+
+  /* Links */
+  --color-link: var(--color-text); /* default (nav) links */
+  --color-link-accent: lightblue; /* in-content links */
+
+  /* Surfaces / lines */
+  --color-rule: #ffffff;
+  --color-surface: rgba(255, 255, 255, 0.1);
+
+  /* Typography */
+  --font-body: 'Roboto', sans-serif;
+  --font-heading: 'Chakra Petch', sans-serif;
+}
+
+/* ============================================================
+   Fonts
+   ============================================================ */
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-ExtraBold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-ExtraBoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Chakra Petch';
+  src: url('/fonts/ChakraPetch-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================================
+   Base elements
+   ============================================================ */
+html,
+body {
+  /* Solid fallback fills any strip revealed when the mobile browser
+     toolbar collapses, so no white shows before the fixed gradient
+     repaints. */
+  background-color: var(--color-bg-fallback);
+  background-image: var(--gradient-bg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: 130%;
+  color: var(--color-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-size: 160%;
+  color: var(--color-heading);
+}
+
+/* Animated-underline links, used site-wide.
+   Colour comes from --color-link, so any container can recolour its
+   links by redefining that variable (see .content-div below). */
+a {
+  font-family: var(--font-body);
+  color: var(--color-link);
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-size: 0 0.1rem;
+  background-repeat: no-repeat;
+  transition: background-size 0.25s ease;
+}
+a:hover,
+a:focus-visible {
+  background-size: 100% 0.1rem;
+}
+
+/* ============================================================
+   Shared layout utilities
+   ============================================================ */
+.horizontal-flex {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.content-div {
+  /* in-content links use the accent colour */
+  --color-link: var(--color-link-accent);
+  width: min(50rem, 90%);
+  height: 100%;
+  margin: auto;
+  justify-content: center;
+}
+
+.title {
+  font-size: 300%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}

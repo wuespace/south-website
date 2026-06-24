@@ -28,38 +28,12 @@
 
 <style>
 
+  /* .content-div, .title and .image are defined in src/app.css */
   .title-div {
     width: 100%;
     height: 100%;
     margin: auto;
     text-align: center;
     justify-content: center;
-  }
-
-  .content-div {
-    width: min(50rem, 90%);
-    height: 100%;
-    margin: auto;
-    justify-content: center;
-  }
-  .title {
-    font-size: 300%;
-  }
-  .image {
-    width: 100%;
-    height: auto;
-  }
-
-  a {
-    color: lightblue;
-    text-decoration: none;
-    background-image: linear-gradient(currentColor, currentColor);
-    background-position: 0 100%;
-    background-size: 0% 0.1rem;
-    background-repeat: no-repeat;
-    transition: background-size 0.25s ease;
-  }
-  a:hover, a:focus-visible {
-    background-size: 100% 0.1rem;
   }
 </style>

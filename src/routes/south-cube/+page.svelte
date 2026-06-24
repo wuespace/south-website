@@ -25,6 +25,7 @@
 
 <style>
 
+  /* .content-div and .title are defined in src/app.css */
   .title-div {
     width: min(50rem, 90%);
     height: 100%;
@@ -32,33 +33,9 @@
     text-align: center;
     justify-content: center;
   }
-
-  .content-div {
-    width: min(50rem, 90%);
-    height: 100%;
-    margin: auto;
-    justify-content: center;
-  }
-  .title {
-    font-size: 300%;
-  }
+  /* .image base (width/height) is in app.css */
   .image {
     object-fit: cover;
-    width: 100%;
     aspect-ratio: 1/1;
-    height: auto;
-  }
-
-  a {
-    color: lightblue;
-    text-decoration: none;
-    background-image: linear-gradient(currentColor, currentColor);
-    background-position: 0 100%;
-    background-size: 0% 0.1rem;
-    background-repeat: no-repeat;
-    transition: background-size 0.25s ease;
-  }
-  a:hover, a:focus-visible {
-    background-size: 100% 0.1rem;
   }
 </style>
