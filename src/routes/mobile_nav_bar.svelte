@@ -7,7 +7,7 @@
 
 <nav>
   <a class="horizontal-flex" href="/">
-    <img src={logo} style:width="4rem" style:margin="0.2rem" alt="south logo" />
+    <img src={logo} class="logo" alt="south logo" />
     <h1>S²OUTH</h1>
   </a>
   <button
@@ -43,6 +43,12 @@
     padding: 0 1rem;
     display: flex;
     align-items: center;
+  }
+  .logo {
+    width: 4rem;
+    margin: 0.2rem;
+    transform: scale(1.8);
+    transform-origin: center;
   }
   .vertical-flex {
     display: flex;

@@ -15,8 +15,11 @@
       <img src={instagram} style:width="3rem" alt="instagram logo" />
     </a>
   </div>
+
+  <hr style:width="80%" style:height="0.1rem" />
+
   <a href="https://wuespace.de">
-    <img src={logo} style:width="20rem" alt="wuespace logo" />
+    <img src={logo} class="logo" alt="wuespace logo" />
   </a>
 
   <hr style:height="0.1rem" />
@@ -33,7 +36,7 @@
     background-image: none;
   }
   .container {
-    width: min(30rem, 90%);
+    width: min(40rem, 90%);
     height: 100%;
     margin: 3rem auto;
     text-align: center;
@@ -43,5 +46,10 @@
     display: flex;
     gap: 3rem;
     justify-content: center;
+  }
+  .logo {
+    width: 20rem;
+    transform: scale(1.4);
+    transform-origin: center;
   }
 </style>

@@ -150,7 +150,7 @@
     position: absolute;
     inset: 0;
     margin-inline: auto;
-    width: min(110rem, 100%);
+    width: min(130rem, 100%);
     height: 100%;
     object-fit: cover;
     object-position: center;

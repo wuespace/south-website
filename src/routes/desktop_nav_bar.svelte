@@ -5,7 +5,7 @@
 
 <nav>
   <a class="horizontal-flex" href="/">
-    <img src={logo} style:width="5rem" style:margin="0.2rem" alt="south logo" />
+    <img src={logo} class="logo" alt="south logo" />
     <h1>S²OUTH</h1>
   </a>
   <div class="horizontal-flex links">
@@ -22,6 +22,12 @@
     padding: 0 4rem;
     display: flex;
     align-items: center;
+  }
+  .logo {
+    width: 4rem;
+    margin: 0.2rem;
+    transform: scale(1.8);
+    transform-origin: center;
   }
   .links {
     margin-left: auto;
