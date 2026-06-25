@@ -40,6 +40,7 @@
     height: 100%;
     margin: 3rem auto;
     text-align: center;
+    overflow: clip;
     justify-content: center;
   }
   .external-links {
@@ -48,7 +49,7 @@
     justify-content: center;
   }
   .logo {
-    width: 20rem;
+    width: min(20rem, 100%);
     transform: scale(1.4);
     transform-origin: center;
   }

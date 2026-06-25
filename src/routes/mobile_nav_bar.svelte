@@ -36,7 +36,7 @@
 
 <style>
   h1 {
-    font-size: 200%;
+    font-size: 180%;
   }
   nav {
     height: 4%;
@@ -49,6 +49,9 @@
     margin: 0.2rem;
     transform: scale(1.8);
     transform-origin: center;
+  }
+  .horizontal-flex {
+    gap: 0.4rem;
   }
   .vertical-flex {
     display: flex;

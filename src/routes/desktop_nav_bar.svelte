@@ -23,6 +23,9 @@
     display: flex;
     align-items: center;
   }
+  .horizontal-flex {
+    gap: 1rem;
+  }
   .logo {
     width: 4rem;
     margin: 0.2rem;
