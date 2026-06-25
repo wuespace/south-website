@@ -17,10 +17,12 @@
   </div>
 
   <hr style:width="80%" style:height="0.1rem" />
-
-  <a href="https://wuespace.de">
-    <img src={logo} class="logo" alt="wuespace logo" />
-  </a>
+  
+  <div class="logo-container">
+    <a href="https://wuespace.de">
+      <img src={logo} class="logo" alt="wuespace logo" />
+    </a>
+  </div>
 
   <hr style:height="0.1rem" />
 </div>
@@ -40,13 +42,15 @@
     height: 100%;
     margin: 3rem auto;
     text-align: center;
-    overflow: clip;
     justify-content: center;
   }
   .external-links {
     display: flex;
     gap: 3rem;
     justify-content: center;
+  }
+  .logo-container {
+    overflow: clip;
   }
   .logo {
     width: min(20rem, 100%);
