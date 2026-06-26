@@ -17,7 +17,7 @@
   </div>
 
   <hr style:width="80%" style:height="0.1rem" />
-  
+
   <div class="logo-container">
     <a href="https://wuespace.de">
       <img src={logo} class="logo" alt="wuespace logo" />

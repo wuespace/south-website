@@ -2,9 +2,10 @@
 name: Build and publish container image
 
 on:
-  # Runs on pushes targeting the default branch
+  # Runs on pushes targeting the default branch and on version tags.
   push:
     branches: ['main']
+    tags: ['v*.*']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -31,8 +32,7 @@ jobs:
         with:
           extra-conf: |
             experimental-features = nix-command flakes
-            # bun2nix isn't on cache.nixos.org; pull the prebuilt binary from
-            # the nix-community cache instead of compiling it from source.
+            # bun2nix cache
             extra-substituters = https://nix-community.cachix.org
             extra-trusted-public-keys = nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
 
@@ -55,13 +55,24 @@ jobs:
 
       # `result` is the docker-archive produced by dockerTools.buildLayeredImage.
       # skopeo pushes it directly — no Docker daemon involved. GHCR requires a
-      # lowercase image path; tag with both `latest` and the commit SHA so
-      # deployments can pin an exact build.
+      # lowercase image path. Pushes to `main` are unstable builds tagged
+      # `latest` plus the commit SHA so deployments can pin an exact build.
+      # A version tag (vX.X.X) marks a stable release: it is tagged with the
+      # version itself plus `stable`, so the newest stable build is always
+      # reachable via `:stable` and any past release via `:vX.X.X`.
       - name: Push image
         shell: bash
         run: |
           IMAGE="ghcr.io/${GITHUB_REPOSITORY,,}"
-          skopeo copy --insecure-policy \
-            docker-archive:result "docker://${IMAGE}:latest"
-          skopeo copy --insecure-policy \
-            docker-archive:result "docker://${IMAGE}:${GITHUB_SHA}"
+          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
+            VERSION="${GITHUB_REF#refs/tags/}"
+            skopeo copy --insecure-policy \
+              docker-archive:result "docker://${IMAGE}:${VERSION}"
+            skopeo copy --insecure-policy \
+              docker-archive:result "docker://${IMAGE}:stable"
+          else
+            skopeo copy --insecure-policy \
+              docker-archive:result "docker://${IMAGE}:latest"
+            skopeo copy --insecure-policy \
+              docker-archive:result "docker://${IMAGE}:${GITHUB_SHA}"
+          fi
