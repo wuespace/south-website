@@ -2,10 +2,9 @@
 name: Build and publish container image
 
 on:
-  # Runs on pushes targeting the default branch and on version tags.
+  # Runs on pushes targeting the default branch.
   push:
     branches: ['main']
-    tags: ['v*.*']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -57,22 +56,12 @@ jobs:
       # skopeo pushes it directly — no Docker daemon involved. GHCR requires a
       # lowercase image path. Pushes to `main` are unstable builds tagged
       # `latest` plus the commit SHA so deployments can pin an exact build.
-      # A version tag (vX.X.X) marks a stable release: it is tagged with the
-      # version itself plus `stable`, so the newest stable build is always
-      # reachable via `:stable` and any past release via `:vX.X.X`.
+      # Promoting a build to a stable release is handled by promote_release.yml.
       - name: Push image
         shell: bash
         run: |
           IMAGE="ghcr.io/${GITHUB_REPOSITORY,,}"
-          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
-            VERSION="${GITHUB_REF#refs/tags/}"
-            skopeo copy --insecure-policy \
-              docker-archive:result "docker://${IMAGE}:${VERSION}"
-            skopeo copy --insecure-policy \
-              docker-archive:result "docker://${IMAGE}:stable"
-          else
-            skopeo copy --insecure-policy \
-              docker-archive:result "docker://${IMAGE}:latest"
-            skopeo copy --insecure-policy \
-              docker-archive:result "docker://${IMAGE}:${GITHUB_SHA}"
-          fi
+          skopeo copy --insecure-policy \
+            docker-archive:result "docker://${IMAGE}:latest"
+          skopeo copy --insecure-policy \
+            docker-archive:result "docker://${IMAGE}:${GITHUB_SHA}"
