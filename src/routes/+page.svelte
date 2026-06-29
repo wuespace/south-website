@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>S²OUTH — Student's Sub-Orbital Unified Telemetry Handler</title>
+  <title>S²OUTH - Student's Sub-Orbital Unified Telemetry Handler</title>
   <meta
     name="description"
     content="S²OUTH is a modern, reliable telemetry system delivering live sensor data, high-precision pose estimation, and an HD video downlink for the full duration of a suborbital spaceshot flight."
@@ -132,9 +132,9 @@
   </p>
 
   <br />
-  <div style:text-align="center">
+  <p style:text-align="center">
     <a href="/documents/south-documentation.pdf"> Read the documentation to learn more </a>
-  </div>
+  </p>
 </div>
 
 <style>

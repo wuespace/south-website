@@ -1,10 +1,10 @@
 # S²OUTH website
 
-The website for **S²OUTH** — the **S**tudent's **S**ub-**O**rbital **U**nified
+The website for **S²OUTH** - the **S**tudent's **S**ub-**O**rbital **U**nified
 **T**elemetry **H**andler, a project by [WüSpace](https://wuespace.de).
 
-S²OUTH is a modern, reliable telemetry system that provides live telemetry —
-sensor data and high-precision pose estimation — for the full duration of a
+S²OUTH is a modern, reliable telemetry system that provides live telemetry -
+sensor data and high-precision pose estimation - for the full duration of a
 suborbital spaceshot flight, plus a secondary high-bandwidth RF link for live
 HD video. The site presents the project, its flight-proven _South Cube_
 predecessor, the _N₂ORTH_ rocket it is being developed for, and the project's
@@ -15,9 +15,9 @@ supporters.
 - [SvelteKit](https://svelte.dev/docs/kit) with Svelte 5 (runes mode)
 - TypeScript
 - [Bun](https://bun.sh) as package manager and runtime
-- [`svelte-adapter-bun`](https://github.com/gornostay25/svelte-adapter-bun) — the
+- [`svelte-adapter-bun`](https://github.com/gornostay25/svelte-adapter-bun) - the
   production build runs as a Bun HTTP server
-- [`@sveltejs/enhanced-img`](https://svelte.dev/docs/kit/images) — images are
+- [`@sveltejs/enhanced-img`](https://svelte.dev/docs/kit/images) - images are
   optimized at build time (AVIF/WebP + responsive variants)
 - [Nix](https://nixos.org) (flake) for a reproducible dev shell and the
   production container image
@@ -59,7 +59,7 @@ Images live in `src/lib/assets/` and are referenced directly by path on the
 
 `@sveltejs/enhanced-img` generates the optimized AVIF/WebP and responsive
 variants at build time, so **commit only a single reasonably-sized source per
-image** — there's no need to add huge originals. Oversized sources blow up both
+image** - there's no need to add huge originals. Oversized sources blow up both
 the dev-server transform time and the build (`sharp` re-encodes every variant).
 
 Before committing a new photo, downscale it and bake in its rotation. Cap the
@@ -70,7 +70,7 @@ images at ~2560px:
 mogrify -auto-orient -strip -resize '2560x2560>'
 ```
 
-- `-auto-orient` rotates the pixels to match the photo's EXIF orientation —
+- `-auto-orient` rotates the pixels to match the photo's EXIF orientation -
   **run it before `-strip`**. Stripping the EXIF orientation flag without
   rotating first leaves phone photos sideways.
 - `-strip` removes metadata; `-resize 'NxN>'` only ever shrinks (never upscales).
