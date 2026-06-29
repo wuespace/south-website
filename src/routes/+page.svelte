@@ -169,11 +169,6 @@
   }
 
   /* .content-div base (width/height/margin/justify + accent links) is in app.css */
-  .content-div {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
   .title {
     font-size: 440%;
   }
