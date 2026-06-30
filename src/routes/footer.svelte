@@ -21,7 +21,7 @@
   <div class="external-links">
     {#each external_links as { src, alt, href }}
       <a {href}>
-        <img {src} {alt} style:width="3rem" />
+        <img {src} {alt} style:width="2.5rem" />
       </a>
     {/each}
   </div>
@@ -57,7 +57,8 @@
   }
   .external-links {
     display: flex;
-    gap: 3rem;
+    flex-wrap: wrap;
+    gap: 2rem;
     justify-content: center;
   }
   .logo-container {

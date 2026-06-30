@@ -53,9 +53,11 @@
           fromImage = null;
 
           # `bun run start` spawns /bin/sh to run the package.json script.
-          contents = [ pkgs.dockerTools.binSh ];
+          contents = [ pkgs.dockerTools.binSh pkgs.tini ];
           config = {
-            Entrypoint = [ (lib.getExe package) ];
+            # tini as PID 1 to forward signals and reap zombies.
+            Entrypoint = [ "${pkgs.tini}/bin/tini" "-g" "--" ];
+            Cmd = [ (lib.getExe package) ];
             Env = [ "PORT=${port}" ];
             ExposedPorts = { "${port}/tcp" = { }; };
           };
