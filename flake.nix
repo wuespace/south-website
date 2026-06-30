@@ -56,7 +56,7 @@
           contents = [ pkgs.dockerTools.binSh pkgs.tini ];
           config = {
             # tini as PID 1 to forward signals and reap zombies.
-            Entrypoint = [ "${pkgs.tini}/bin/tini" "-g" "--" ];
+            Entrypoint = [ (lib.getExe pkgs.tini) "-g" "--" ];
             Cmd = [ (lib.getExe package) ];
             Env = [ "PORT=${port}" ];
             ExposedPorts = { "${port}/tcp" = { }; };
