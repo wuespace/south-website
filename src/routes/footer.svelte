@@ -30,11 +30,15 @@
 
   <div class="logo-container">
     <a href="https://wuespace.de">
-      <img src={logo} class="logo" alt="wuespace logo" />
+      <img src={logo} class="logo" alt="WüSpace logo" />
     </a>
   </div>
 
   <hr style:height="0.1rem" />
+  <div class="notice-links">
+    <a href="https://wuespace.de/legal-notice/"> Legal Notice </a>
+    <a href="https://wuespace.de/privacy-policy/"> Privacy Policy </a>
+  </div>
 </div>
 
 <style>
@@ -51,7 +55,8 @@
     width: min(40rem, 90%);
     height: 100%;
     margin: 0 auto;
-    padding: 4rem 0;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
     text-align: center;
     justify-content: center;
   }
@@ -68,5 +73,10 @@
     width: min(20rem, 100%);
     transform: scale(1.4);
     transform-origin: center;
+  }
+  .notice-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
   }
 </style>

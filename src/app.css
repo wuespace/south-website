@@ -164,3 +164,19 @@ a:focus-visible {
   width: 100%;
   height: auto;
 }
+
+/* ============================================================
+   Reduced motion — honour the user's OS-level preference.
+   Svelte transitions are JS-driven and opt out separately via
+   $lib/reducedMotion.svelte.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

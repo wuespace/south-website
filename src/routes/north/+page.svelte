@@ -15,7 +15,7 @@
     loading="lazy"
     src="$lib/assets/pictures/north/North.jpg"
     class="image"
-    alt="north rocket"
+    alt="The N₂ORTH hybrid rocket resting horizontally on stands outdoors, showing its HyEnD N₂ORTH livery"
   />
   <p>
     <i>N₂ORTH</i> is a student build hybrid engine rocket developed by the team of

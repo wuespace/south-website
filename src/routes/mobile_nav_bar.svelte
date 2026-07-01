@@ -7,7 +7,7 @@
 
 <nav>
   <a class="horizontal-flex" href="/">
-    <img src={logo} class="logo" alt="south logo" />
+    <img src={logo} class="logo" alt="" />
     <h1>S²OUTH</h1>
   </a>
   <button

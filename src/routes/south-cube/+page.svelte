@@ -15,7 +15,7 @@
     loading="lazy"
     src="$lib/assets/pictures/south_cube/CubeBP.png"
     class="image"
-    alt="cube"
+    alt="Blueprint-style technical line drawing of the South Cube telemetry payload"
   />
   <p>
     South Cube was a preliminary version of the <i>S²OUTH</i> telemetry system that flew as a
@@ -28,7 +28,7 @@
     loading="lazy"
     src="$lib/assets/pictures/south_cube/Cube.jpg"
     class="image"
-    alt="cube"
+    alt="Hand holding the assembled South Cube payload at the EUROC launch site, with competition tents in the background"
   />
 </div>
 

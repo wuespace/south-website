@@ -10,7 +10,7 @@
   <enhanced:img
     class="bg-title"
     src="$lib/assets/pictures/home/AssemblyCAD.png"
-    alt=""
+    alt="CAD render of the S²OUTH avionics stack mounted inside the rocket's nose cone"
     fetchpriority="high"
   />
   <div class="text-title-div">
@@ -51,7 +51,7 @@
     loading="lazy"
     src="$lib/assets/pictures/home/FullAssembly.jpg"
     class="image"
-    alt="integrated assembly"
+    alt="The fully integrated S²OUTH telemetry stack assembled on its support frame during outdoor testing"
   />
 
   <h2>Capabilities</h2>
@@ -79,7 +79,7 @@
     loading="lazy"
     src="$lib/assets/pictures/home/UpperSensor.jpg"
     class="image"
-    alt="Upper sensor boards"
+    alt="Close-up of the stacked redundant sensor boards, each carrying two IMUs, a magnetometer and a barometer"
   />
 
   <h3>Telemetry downlink</h3>
@@ -93,7 +93,7 @@
     loading="lazy"
     src="$lib/assets/pictures/home/RocketLST.png"
     class="image"
-    alt="RocketLST"
+    alt="PCB layout of the RocketLST 437 MHz telemetry downlink board, measuring 80 by 80 millimetres"
   />
 
   <h3>Power supply</h3>
@@ -105,7 +105,12 @@
     backup if measurements exceed specifications.
   </p>
 
-  <enhanced:img loading="lazy" src="$lib/assets/pictures/home/EPS.png" class="image" alt="EPS" />
+  <enhanced:img
+    loading="lazy"
+    src="$lib/assets/pictures/home/EPS.png"
+    class="image"
+    alt="3D render of the EPS power supply board that distributes power across isolated rails"
+  />
 
   <h3>RocketHD</h3>
 
@@ -120,7 +125,7 @@
     loading="lazy"
     src="$lib/assets/pictures/home/RocketHD.png"
     class="image"
-    alt="RocketHD"
+    alt="3D render of the RocketHD board with its RF connectors for the high-bandwidth video downlink"
   />
 
   <h3>Groundstation</h3>
@@ -178,6 +183,6 @@
   /* .image base (width/height) is in app.css */
   .image {
     object-fit: cover;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1.5/1;
   }
 </style>
