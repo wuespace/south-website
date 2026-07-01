@@ -18,14 +18,14 @@
     alt="The N₂ORTH hybrid rocket resting horizontally on stands outdoors, showing its HyEnD N₂ORTH livery"
   />
   <p>
-    <i>N₂ORTH</i> is a student build hybrid engine rocket developed by the team of
-    <i>HyEnD</i> e. V. in Stuttgart. It’s main engine, <i>HyLIGHT</i> provides up to
-    <i>15 kN</i> of thrust and runs on nitrous oxide as well as an in-house developed solid rocket
-    fuel. <i>N₂ORTH</i> already launched twice in April of 2023, reaching an apogee of
-    <i>64.4 km</i>. This time we aim for a lot higher, with optimistic estimates going up to
-    <i>150 km</i>. Learn more about <i>N₂ORTH</i> on the
+    <em>N₂ORTH</em> is a student build hybrid engine rocket developed by the team of
+    <em>HyEnD</em> e. V. in Stuttgart. It’s main engine, <em>HyLIGHT</em> provides up to
+    <em>15 kN</em> of thrust and runs on nitrous oxide as well as an in-house developed solid rocket
+    fuel. <em>N₂ORTH</em> already launched twice in April of 2023, reaching an apogee of
+    <em>64.4 km</em>. This time we aim for a lot higher, with optimistic estimates going up to
+    <em>150 km</em>. Learn more about <em>N₂ORTH</em> on the
     <a href="https://hyend.de/index.php/dlr-stern-participation/">
-      <i>official HyEnD website</i>
+      <em>official HyEnD website</em>
     </a>.
   </p>
 </div>

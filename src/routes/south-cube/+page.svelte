@@ -18,11 +18,11 @@
     alt="Blueprint-style technical line drawing of the South Cube telemetry payload"
   />
   <p>
-    South Cube was a preliminary version of the <i>S²OUTH</i> telemetry system that flew as a
+    South Cube was a preliminary version of the <em>S²OUTH</em> telemetry system that flew as a
     payload on the <a href="https://astg.at/projects/ispida">ASTG Ispida</a>
-    rocket at the <i>European Rocketry Challange</i> (EUROC) 2025 in Portugal. The rocket reached an apogee
-    of 9.4 km and accelerations of more than 8g. The system successfully transmitted and recorded telemetry
-    data and proved the functionality of several key systems in real world conditions
+    rocket at the <em>European Rocketry Challange</em> (EUROC) 2025 in Portugal. The rocket reached an
+    apogee of 9.4 km and accelerations of more than 8g. The system successfully transmitted and recorded
+    telemetry data and proved the functionality of several key systems in real world conditions
   </p>
   <enhanced:img
     loading="lazy"

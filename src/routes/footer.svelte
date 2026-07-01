@@ -20,7 +20,7 @@
 
   <div class="external-links">
     {#each external_links as { src, alt, href }}
-      <a {href}>
+      <a {href} title={alt}>
         <img {src} {alt} style:width="2.5rem" />
       </a>
     {/each}

@@ -27,7 +27,7 @@
   <h2>Abstract</h2>
 
   <p>
-    <i>S²OUTH</i> is a project developing a modern and reliable telemetry system. The goal of the system
+    <em>S²OUTH</em> is a project developing a modern and reliable telemetry system. The goal of the system
     is to provide live telemetry including sensor data, and high precision pose estimation for the entire
     duration of a suborbital spaceshot flight. Furthermore the project includes a secondary high bandwidth
     RF link to stream high fidelity video of the rocket during the flight.
@@ -35,16 +35,16 @@
 
   <p>
     The project was originally conceived in collaboration with the student team from
-    <i>HyEnD Stuttgart</i> for usage in their <i>N₂ORTH</i> hybrid propellant rocket. Since then a
-    preliminary version of the project named
-    <a href="/south-cube">South Cube</a> has flown as payload on the <i>Ispida</i> rocket build by
-    <i>Aerospace Team Graz (ASTG)</i> and further options for collaborations with student teams are being
-    explored.
+    <em>HyEnD Stuttgart</em> for usage in their <em>N₂ORTH</em> hybrid propellant rocket. Since then
+    a preliminary version of the project named
+    <a href="/south-cube">South Cube</a> has flown as payload on the <em>Ispida</em> rocket build by
+    <em>Aerospace Team Graz (ASTG)</em> and further options for collaborations with student teams are
+    being explored.
   </p>
 
   <p>
-    The <i>N₂ORTH</i> rocket is currently scheduled to fly in early to mid 2027. More details can be
-    found on the <a href="/north">N₂ORTH</a> page.
+    The <em>N₂ORTH</em> rocket is currently scheduled to fly in early to mid 2027. More details can
+    be found on the <a href="/north">N₂ORTH</a> page.
   </p>
 
   <enhanced:img
@@ -57,7 +57,7 @@
   <h2>Capabilities</h2>
 
   <p>
-    The <i>S²OUTH</i> project is designed to provide the following capabilities:
+    The <em>S²OUTH</em> project is designed to provide the following capabilities:
   </p>
 
   <h3>Distributed system</h3>
@@ -71,7 +71,7 @@
 
   <p>
     The system contains two redundant sensor boards each containing two IMUs, a magnetometer, a
-    barometer and a connection to the <i>DLR Phoenix</i> GPS receiver. Each sensor board also contains
+    barometer and a connection to the <em>DLR Phoenix</em> GPS receiver. Each sensor board also contains
     a MCU for pose estimation.
   </p>
 
@@ -115,9 +115,9 @@
   <h3>RocketHD</h3>
 
   <p>
-    Build on top of the <i>OpenIPC</i> and <i>wifibroadcast</i> project,
-    <i>RocketHD</i> aims to provide a high bandwith link for video and backup telemetry
-    transmission. Using our custom <i>wifibroadcast</i> software as well as four amplifiers and patch
+    Build on top of the <em>OpenIPC</em> and <em>wifibroadcast</em> project,
+    <em>RocketHD</em> aims to provide a high bandwith link for video and backup telemetry
+    transmission. Using our custom <em>wifibroadcast</em> software as well as four amplifiers and patch
     antennas we hope to receive high definition video live from space.
   </p>
 
@@ -131,8 +131,8 @@
   <h3>Groundstation</h3>
 
   <p>
-    To enable continuous receiving of data a custom build antenna tracker is used. As part of the <i
-      >RocketHD</i
+    To enable continuous receiving of data a custom build antenna tracker is used. As part of the <em
+      >RocketHD</em
     > project we aim to point a 5.8GHz dish antenna with 0.5 degrees of precision.
   </p>
 
