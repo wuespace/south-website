@@ -51,6 +51,7 @@
     loading="lazy"
     src="$lib/assets/pictures/home/FullAssembly.jpg"
     class="image"
+    style:aspect-ratio="1/1"
     alt="The fully integrated S²OUTH telemetry stack assembled on its support frame during outdoor testing"
   />
 
