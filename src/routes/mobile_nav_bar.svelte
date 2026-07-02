@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { slide } from 'svelte/transition';
-  import { reducedMotion } from '$lib/reducedMotion.svelte';
+  import { slide } from 'svelte-reduced-motion/transition';
   import logo from '$lib/assets/south-logo.svg';
   let menu_active = $state(false);
   let { children } = $props();
@@ -29,7 +28,7 @@
 </nav>
 
 {#if menu_active}
-  <div transition:slide={{ duration: reducedMotion.current ? 0 : 400 }} class="vertical-flex">
+  <div transition:slide={{}} class="vertical-flex">
     <br />
     {@render children()}
   </div>
