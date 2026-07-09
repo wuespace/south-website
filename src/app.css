@@ -6,9 +6,9 @@
    ============================================================ */
 :root {
   /* Backgrounds */
-  --color-bg-start: #292929;
-  --color-bg-end: #0d2d59;
-  --color-bg-fallback: #0d2d59;
+  --color-bg-start: #1e1e2e;
+  --color-bg-end: #182d4a;
+  --color-bg-fallback: #1e1e2e;
   --gradient-bg: linear-gradient(to bottom right, var(--color-bg-start), var(--color-bg-end));
 
   /* Text */
@@ -167,8 +167,7 @@ a:focus-visible {
 
 /* ============================================================
    Reduced motion — honour the user's OS-level preference.
-   Svelte transitions are JS-driven and opt out separately via
-   $lib/reducedMotion.svelte.
+   Svelte transitions are JS-driven and opt out separately.
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   *,
