@@ -38,29 +38,9 @@
 
         packages.default = package;
 
-        # OCI image for the server.
-        packages.container =
-        let
-          name = "south-website";
-          tag = "latest";
-          port = "3000";
-        in
-        pkgs.dockerTools.buildLayeredImage {
-          inherit name;
-          inherit tag;
-
-          # Defaults to "scratch" image
-          fromImage = null;
-
-          # `bun run start` spawns /bin/sh to run the package.json script.
-          contents = [ pkgs.dockerTools.binSh pkgs.tini ];
-          config = {
-            # tini as PID 1 to forward signals and reap zombies.
-            Entrypoint = [ (lib.getExe pkgs.tini) "-g" "--" ];
-            Cmd = [ (lib.getExe package) ];
-            Env = [ "PORT=${port}" ];
-            ExposedPorts = { "${port}/tcp" = { }; };
-          };
+        # OCI image serving the static site with caddy.
+        packages.container = pkgs.callPackage ./container.nix {
+          site = package;
         };
       }
     );
