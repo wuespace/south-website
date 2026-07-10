@@ -1,30 +1,46 @@
-# Build the OCI image with Nix and publish it to the GitHub Container Registry.
-name: Build and publish container image
+# Build the static site with Nix and publish it to GitHub Pages.
+#
+# Runs only when a new stable version is available: it is chained to the
+# "Promote release image" workflow (promote_release.yml) via workflow_run and
+# skips unless that run succeeded. It builds the exact commit the promoted
+# tag points at, so Pages always serves the same content as the `:stable`
+# container image.
+name: Publish page
 
 on:
-  # Runs on pushes targeting the default branch.
-  push:
-    branches: ['main']
+  workflow_run:
+    workflows: ['Promote release image']
+    types: [completed]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Allow pulling the repo and pushing packages (GHCR) with GITHUB_TOKEN.
+# Allow reading the repo and deploying to Pages with GITHUB_TOKEN.
 permissions:
   contents: read
-  packages: write
+  pages: write
+  id-token: write
 
-# Allow only one concurrent publish, skipping runs queued between the run
+# Allow only one concurrent deployment, skipping runs queued between the run
 # in-progress and the latest queued.
 concurrency:
-  group: 'container'
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
   publish:
+    # workflow_run fires on failed promotions too - only deploy after success.
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v5
+        with:
+          # The commit the promoted tag points at; falls back to the default
+          # branch head on manual dispatch.
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
 
       - name: Install Nix
         uses: NixOS/nix-installer-action@main
@@ -35,33 +51,20 @@ jobs:
             extra-substituters = https://nix-community.cachix.org
             extra-trusted-public-keys = nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
 
-      - name: Build image
+      # packages.default is the prerendered site (see default.nix).
+      - name: Build site
         shell: bash
-        run: nix build .#container --print-build-logs
+        run: nix build --print-build-logs
 
-      - name: Install skopeo
-        shell: bash
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y skopeo
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
-      - name: Log in to GHCR
-        uses: docker/login-action@v4
+      # The upload tars with --dereference, so the `result` store symlink works.
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          path: result
 
-      # `result` is the docker-archive produced by dockerTools.buildLayeredImage.
-      # skopeo pushes it directly — no Docker daemon involved. GHCR requires a
-      # lowercase image path. Pushes to `main` are unstable builds tagged
-      # `latest` plus the commit SHA so deployments can pin an exact build.
-      # Promoting a build to a stable release is handled by promote_release.yml.
-      - name: Push image
-        shell: bash
-        run: |
-          IMAGE="ghcr.io/${GITHUB_REPOSITORY,,}"
-          skopeo copy --insecure-policy \
-            docker-archive:result "docker://${IMAGE}:latest"
-          skopeo copy --insecure-policy \
-            docker-archive:result "docker://${IMAGE}:${GITHUB_SHA}"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,7 +1,7 @@
 # Promote an already-built image to a stable release.
 #
 # A version tag (vX.X) points at a commit that `main` already built and pushed
-# as `:<sha>` via publish_page.yml. Promoting is therefore just a registry-side
+# as `:<sha>` via publish_container.yml. Promoting is therefore just a registry-side
 # re-tag: skopeo copies the existing manifest (layers are deduped by digest),
 # so this finishes in seconds and never rebuilds. The release becomes reachable
 # via `:vX.X` (pin a specific version) and `:stable` (newest stable release).
@@ -41,7 +41,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       # GITHUB_SHA is the commit the tag points at, which matches the `:<sha>`
-      # tag publish_page.yml pushed when that commit landed on main. Fails fast
+      # tag publish_container.yml pushed when that commit landed on main. Fails fast
       # if the tagged commit was never built on main (no `:<sha>` to promote).
       - name: Promote image to stable
         shell: bash
