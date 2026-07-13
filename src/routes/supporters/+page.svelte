@@ -7,7 +7,7 @@
 </svelte:head>
 
 <div class="title-div">
-  <h1>Supporters</h1>
+  <h1><mark>[</mark> Supporters <mark>]</mark></h1>
 </div>
 
 <div class="content-div">

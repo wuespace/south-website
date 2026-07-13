@@ -6,22 +6,25 @@
    ============================================================ */
 :root {
   /* Backgrounds */
-  --color-bg-start: #1e1e2e;
-  --color-bg-end: #182d4a;
-  --color-bg-fallback: #1e1e2e;
+  --color-bg-start: #1E1E2E;
+  --color-bg-end: #182D4A;
+  --color-bg-fallback: #182D4A;
   --gradient-bg: linear-gradient(to bottom right, var(--color-bg-start), var(--color-bg-end));
 
   /* Text */
-  --color-text: #ffffff;
-  --color-heading: #ffffff;
-  --color-icon: #ffffff;
+  --color-text: white;
+  --color-heading: white;
+  --color-icon: white;
 
   /* Links */
   --color-link: var(--color-text); /* default (nav) links */
-  --color-link-accent: #89DCEB; /* in-content links */
+  --color-link-accent: #96E0ED; /* in-content links */
+
+  /* Accents */
+  --color-accent: #F9A877;
 
   /* Surfaces / lines */
-  --color-rule: #ffffff;
+  --color-rule: white;
   --color-surface: rgba(255, 255, 255, 0.1);
 
   /* Typography */
@@ -141,6 +144,10 @@ a {
 a:hover,
 a:focus-visible {
   background-size: 100% 0.1rem;
+}
+mark {
+  background-color: transparent;
+  color: var(--color-accent);
 }
 
 /* ============================================================

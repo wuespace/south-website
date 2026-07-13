@@ -24,7 +24,7 @@
 </div>
 
 <div class="content-div">
-  <h2>Abstract</h2>
+  <h2><mark>></mark> Abstract</h2>
 
   <p>
     <em>S²OUTH</em> is a project developing a modern and reliable telemetry system. The goal of the system
@@ -55,20 +55,20 @@
     alt="The fully integrated S²OUTH telemetry stack assembled on its support frame during outdoor testing"
   />
 
-  <h2>Capabilities</h2>
+  <h2><mark>></mark> Capabilities</h2>
 
   <p>
     The <em>S²OUTH</em> project is designed to provide the following capabilities:
   </p>
 
-  <h3>Distributed system</h3>
+  <h3><mark>></mark> Distributed system</h3>
 
   <p>
     The onboard system is made up of nine distinct boards connected via a two redundant CAN busses
     to ensure that no single component failure causes the entire system to fail.
   </p>
 
-  <h3>Sensor board</h3>
+  <h3><mark>></mark> Sensor board</h3>
 
   <p>
     The system contains two redundant sensor boards each containing two IMUs, a magnetometer, a
@@ -83,7 +83,7 @@
     alt="Close-up of the stacked redundant sensor boards, each carrying two IMUs, a magnetometer and a barometer"
   />
 
-  <h3>Telemetry downlink</h3>
+  <h3><mark>></mark> Telemetry downlink</h3>
 
   <p>
     Built on top of the OpenLST project, our 437Mhz based telemetry downlink guarantees a stable
@@ -97,7 +97,7 @@
     alt="PCB layout of the RocketLST 437 MHz telemetry downlink board, measuring 80 by 80 millimetres"
   />
 
-  <h3>Power supply</h3>
+  <h3><mark>></mark> Power supply</h3>
 
   <p>
     The power supply connects to two 5s LiIon batteries (main and backup) and distributes the power
@@ -113,7 +113,7 @@
     alt="3D render of the EPS power supply board that distributes power across isolated rails"
   />
 
-  <h3>RocketHD</h3>
+  <h3><mark>></mark> RocketHD</h3>
 
   <p>
     Build on top of the <em>OpenIPC</em> and <em>wifibroadcast</em> project,
@@ -129,7 +129,7 @@
     alt="3D render of the RocketHD board with its RF connectors for the high-bandwidth video downlink"
   />
 
-  <h3>Groundstation</h3>
+  <h3><mark>></mark> Groundstation</h3>
 
   <p>
     To enable continuous receiving of data a custom build antenna tracker is used. As part of the <em

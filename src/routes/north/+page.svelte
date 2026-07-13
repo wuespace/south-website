@@ -7,7 +7,7 @@
 </svelte:head>
 
 <div class="title-div">
-  <h1>N₂ORTH</h1>
+  <h1><mark>[</mark> N₂ORTH <mark>]</mark></h1>
 </div>
 
 <div class="content-div">
