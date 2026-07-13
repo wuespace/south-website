@@ -88,11 +88,17 @@ Deployment is container-based. The app is packaged into an OCI image with Nix:
 
 ```sh
 nix build .#container
-docker load < result
+podman load --input result
 ```
 
 On every push to `main`, the
-[`publish_page.yml`](.github/workflows/publish_page.yml) workflow builds this
+[`publish_container.yml`](.github/workflows/publish_container.yml) workflow builds this
 image and pushes it to the GitHub Container Registry
-(`ghcr.io/<owner>/south-website`), tagged with both `latest` and the commit SHA.
+(`ghcr.io/wuespace/south-website`), tagged with both `latest` and the commit SHA.
 The container runs the Bun server on `$PORT` (default `3000`).
+
+Forthermore on version tags the current state of the repo is stabilized, and the
+latest container receives the tags `stable` as well as the version.
+
+Additionally (as long as this website remains static) stabilizing will publish the website
+to gh pages.
