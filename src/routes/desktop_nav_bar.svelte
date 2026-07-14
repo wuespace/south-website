@@ -6,7 +6,7 @@
 <nav>
   <a class="horizontal-flex" href="/">
     <img src={logo} class="logo" alt="" />
-    <h1>S²OUTH</h1>
+    <h1><mark>S²</mark>OUTH</h1>
   </a>
   <div class="horizontal-flex links">
     {@render children()}

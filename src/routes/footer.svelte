@@ -50,6 +50,7 @@
   /* Footer links wrap images, so opt out of the global underline animation. */
   a {
     background-image: none;
+    color: var(--color-link-accent);
   }
   .container {
     width: min(40rem, 90%);

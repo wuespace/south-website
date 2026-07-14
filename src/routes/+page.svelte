@@ -14,7 +14,7 @@
     fetchpriority="high"
   />
   <div class="text-title-div">
-    <h1 class="title">S²OUTH</h1>
+    <h1 class="title"><mark>&lbrace;</mark> S²OUTH <mark>&rbrace;</mark></h1>
 
     <p class="subtitle">
       <b>S</b>tudent’s <b>S</b>ub-<b>O</b>rbital
