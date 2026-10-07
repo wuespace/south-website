@@ -16,6 +16,9 @@ let
     # No runtime reconfiguration in an immutable container, disable admin api
     admin.disabled = true;
 
+    # How long open requests may finish on shutdown before being cut off.
+    apps.http.grace_period = "5s";
+
     apps.http.servers.static = {
       listen = [ ":${port}" ];
       automatic_https.disable = true;
