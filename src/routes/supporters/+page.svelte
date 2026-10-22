@@ -13,11 +13,25 @@
 <div class="content-div">
   <h3>This project is only possible due to support from these organizations:</h3>
   <div class="logo-grid">
-    <enhanced:img src="#lib/assets/supporters/aisler_logo.png" class="logo" alt="AISLER logo" />
+    <enhanced:img
+      src="#lib/assets/supporters/aisler_logo.png"
+      class="logo"
+      alt="AISLER logo"
+    />
     <enhanced:img
       src="#lib/assets/supporters/sparkasse_logo.png"
       class="logo"
       alt="Sparkasse logo - PS-Sparen und Gewinnen"
+    />
+    <enhanced:img
+      src="#lib/assets/supporters/vogel_stiftung_logo.svg"
+      class="logo"
+      alt="Vogel stiftung logo - Vogel Stiftung Dr. Eckernkamp"
+    />
+    <enhanced:img
+      src="#lib/assets/supporters/wuerth_elektronik_logo.svg"
+      class="logo"
+      alt="Würth elektronik logo"
     />
   </div>
 </div>
