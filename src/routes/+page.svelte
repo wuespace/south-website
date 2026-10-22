@@ -160,7 +160,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: contrast(0.5) brightness(0.9);
+    filter: brightness(0.85);
 
     z-index: 0;
   }
