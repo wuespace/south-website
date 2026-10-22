@@ -22,7 +22,7 @@
 
   /* Surfaces / lines */
   --color-rule: white;
-  --color-surface: rgba(255, 255, 255, 0.1);
+  --color-surface: #FFFFFF25;
 
   /* Typography */
   --font-body: 'Roboto', sans-serif;

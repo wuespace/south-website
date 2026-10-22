@@ -56,7 +56,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     align-items: center;
-    gap: 4rem;
+    gap: 1rem;
   }
   .logo {
     width: 100%;
