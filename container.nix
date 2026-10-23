@@ -6,7 +6,7 @@
   caddy,
   # The static site derivation to serve
   site,
-  name ? "south-website",
+  pname,
   tag ? "latest",
   port ? "3000",
   ...
@@ -75,7 +75,7 @@ let
   });
 in
 dockerTools.buildLayeredImage {
-  inherit name;
+  name = pname;
   inherit tag;
 
   # Defaults to "scratch" image

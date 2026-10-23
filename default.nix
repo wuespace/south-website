@@ -3,6 +3,8 @@
   runCommand,
   stdenv,
   lib,
+  pname,
+  version,
   ...
 }:
 let
@@ -20,8 +22,8 @@ in
 # built files - no runtime server. bun2nix.hook installs node_modules from
 # the prefetched cache before buildPhase runs.
 stdenv.mkDerivation {
-  pname = "south-website";
-  version = "1.0";
+  inherit pname;
+  inherit version;
 
   src = ./.;
 

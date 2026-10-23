@@ -10,6 +10,9 @@
   outputs = { self, nixpkgs, flake-utils, bun2nix }:
     flake-utils.lib.eachDefaultSystem (system:
       let
+        pname = "south-website";
+        version = "1.x";
+
         pkgs = import nixpkgs {
           inherit system;
         };
@@ -18,6 +21,8 @@
 
         package = pkgs.callPackage ./default.nix {
           bun2nix = bun2nix.packages.${system}.default;
+          inherit pname;
+          inherit version;
         };
       in
       {
@@ -41,6 +46,7 @@
         # OCI image serving the static site with caddy.
         packages.container = pkgs.callPackage ./container.nix {
           site = package;
+          inherit pname;
         };
       }
     );
