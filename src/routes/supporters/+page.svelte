@@ -28,11 +28,10 @@
       class="logo"
       alt="Vogel stiftung logo - Vogel Stiftung Dr. Eckernkamp"
     />
-    <enhanced:img
-      src="#lib/assets/supporters/wuerth_elektronik_logo.svg"
+    <h3
+      style="color:red"
       class="logo"
-      alt="Würth elektronik logo"
-    />
+    > Würth Elektronik </h3>
   </div>
 </div>
 
